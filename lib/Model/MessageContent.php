@@ -46,17 +46,17 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'MessageContent';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'body' => '\OpenAPI\Client\Model\MessagePropsInteractiveBody',
         'buttons' => '\OpenAPI\Client\Model\Button[]',
@@ -114,12 +114,12 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'body' => null,
         'buttons' => null,
@@ -177,10 +177,10 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'body' => false,
         'buttons' => false,
@@ -238,10 +238,10 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -393,7 +393,7 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
         'link' => 'setLink',
         'mime_type' => 'setMimeType',
         'file_size' => 'setFileSize',
-        'file_name' => 'setFileName',
+        'file_name' => 'set_file_name',
         'sha256' => 'setSha256',
         'timestamp' => 'setTimestamp',
         'caption' => 'setCaption',
@@ -454,7 +454,7 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
         'link' => 'getLink',
         'mime_type' => 'getMimeType',
         'file_size' => 'getFileSize',
-        'file_name' => 'getFileName',
+        'file_name' => 'get_file_name',
         'sha256' => 'getSha256',
         'timestamp' => 'getTimestamp',
         'caption' => 'getCaption',
@@ -628,14 +628,14 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -988,7 +988,7 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getFileName()
+    public function get_file_name()
     {
         return $this->container['file_name'];
     }
@@ -1000,7 +1000,7 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFileName($file_name)
+    public function set_file_name($file_name)
     {
         if (is_null($file_name)) {
             throw new \InvalidArgumentException('non-nullable file_name cannot be null');
@@ -2266,7 +2266,7 @@ class MessageContent implements ModelInterface, ArrayAccess, \JsonSerializable
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
